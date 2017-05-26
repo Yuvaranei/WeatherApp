@@ -22,11 +22,20 @@
     "react-bootstrap": "^0.31.0",
     "react-bootstrap-table": "^3.3.6",
     "react-dom": "^15.5.4",
+    "react-highcharts": "^12.0.0",
     "reactjs-bootstrap-table": "^1.0.12",
     "sass-loader": "^6.0.5",
     "style-loader": "^0.17.0",
     "url-loader": "^0.5.8",
     "webpack": "^2.5.1",
     "webpack-dev-server": "^2.4.5"
-  }
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Yuvaranei/WeatherApp.git"
+  },
+  "bugs": {
+    "url": "https://github.com/Yuvaranei/WeatherApp/issues"
+  },
+  "homepage": "https://github.com/Yuvaranei/WeatherApp#readme"
 }

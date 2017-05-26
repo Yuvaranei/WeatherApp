@@ -1,9 +1,0 @@
-install node-sass to make it completely work without error on npm start
-add script tag with bundled js in index.html
-use url-loader in order to avoid errors during image loading
-to make bootstrap work, ve to import bootstrap.css in main.js 
-and include .css & exclude node_modules
-
-open weather api call for chennai
-api.openweathermap.org/data/2.5/forecast?id=1264527&APPID=e25f9adf83698ee54b22f64d9673f9fc
-
