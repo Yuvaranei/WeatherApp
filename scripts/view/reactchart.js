@@ -2,13 +2,13 @@ import React from 'react'
 import ReactHighcharts from 'react-highcharts'
 import Highcharts from 'highcharts'
 
-export default class ReactChart extends React.Component{
-    constructor(props){
+export default class ReactChart extends React.Component {
+    constructor(props) {
         super(props)
 
         var chartConfig = {
             chart: {
-               zoomType: 'xy'
+                zoomType: 'xy'
             },
             title: {
                 text: 'Weather Report'
@@ -18,17 +18,17 @@ export default class ReactChart extends React.Component{
             },
             xAxis: {
                 labels: {
-                autoRotation: [0, -15],
-                format: '{value:%b %e %I:%M:%S %p }',
-                align: 'center',
-            },
-            categories : this.props.dataconfig.timelist,
-               type: 'datetime',
+                    autoRotation: [0, -15],
+                    format: '{value:%b %e %I:%M:%S %p }',
+                    align: 'center',
+                },
+                categories: this.props.dataconfig.timelist,
+                type: 'datetime',
                 startOnTick: true,
                 endOnTick: true
             },
             yAxis: [
-                        { // Primary yAxis
+                { 
                     labels: {
                         format: '{value}°C',
                         style: {
@@ -43,7 +43,7 @@ export default class ReactChart extends React.Component{
                     },
                     opposite: true
 
-                }, { // Secondary yAxis
+                }, { 
                     gridLineWidth: 0,
                     title: {
                         text: 'Wind',
@@ -58,7 +58,7 @@ export default class ReactChart extends React.Component{
                         }
                     }
 
-                }, { // Tertiary yAxis
+                }, { 
                     gridLineWidth: 0,
                     title: {
                         text: 'Sea-Level Pressure',
@@ -77,7 +77,7 @@ export default class ReactChart extends React.Component{
             ],
             tooltip: {
                 crosshairs: true,
-                 shared: true
+                shared: true
             },
             plotOptions: {
                 spline: {
@@ -88,62 +88,53 @@ export default class ReactChart extends React.Component{
                     }
                 }
             },
-            series:  [{
-                        name: 'Wind',
-                        type: 'areaspline',
-                        yAxis: 1,
-                        data: this.props.dataconfig.wind,
-                        tooltip: {
-                            valueSuffix: ' mm'
-                        },
-                        marker : {
-                            symbol : "diamond",
+            series: [{
+                name: 'Wind',
+                type: 'areaspline',
+                yAxis: 1,
+                data: this.props.dataconfig.wind,
+                tooltip: {
+                    valueSuffix: ' mm'
+                },
+                marker: {
+                    symbol: "diamond",
 
-                        }
+                }
 
-                    }, {
-                        name: 'Sea-Level Pressure',
-                        type: 'spline',
-                        yAxis: 2,
-                        data: this.props.dataconfig.pressure,
-                        marker: {
-                            enabled: false,
-                        },
-                        dashStyle: 'shortdot',
-                        tooltip: {
-                            valueSuffix: ' mb'
-                        }
+            }, {
+                name: 'Sea-Level Pressure',
+                type: 'spline',
+                yAxis: 2,
+                data: this.props.dataconfig.pressure,
+                marker: {
+                    enabled: false,
+                },
+                dashStyle: 'shortdot',
+                tooltip: {
+                    valueSuffix: ' mb'
+                }
 
-                    }, {
-                        name: 'Temperature',
-                        type: 'spline',
-                        data: this.props.dataconfig.temperature,
-                         color: Highcharts.getOptions().colors[3],
-                         marker : {
-                             symbol : "circle"
-                         },
-                        tooltip: {
-                            valueSuffix: ' °C'
-                        }
-                        
-                    }]
+            }, {
+                name: 'Temperature',
+                type: 'spline',
+                data: this.props.dataconfig.temperature,
+                color: Highcharts.getOptions().colors[3],
+                marker: {
+                    symbol: "circle"
+                },
+                tooltip: {
+                    valueSuffix: ' °C'
+                }
+
+            }]
         }
-    
-                this.state = {config: chartConfig};
+
+        this.state = { config: chartConfig };
     }
 
-    
-
- 
-
-    componentDidMount(){
-
-    }
-
-    render(){
-       
-        return(
-            <ReactHighcharts config = {this.state.config} ref="chart"></ReactHighcharts>
+    render() {
+        return (
+            <ReactHighcharts config={this.state.config} ref="chart"></ReactHighcharts>
         )
     }
 }
