@@ -1,10 +1,11 @@
 {
   "name": "weatherapp",
   "version": "1.0.0",
-  "description": "",
+  "description": "Weather App uses react highcharts to display the 5 days weather forecast JSON data.\r JSON data is retrived using API call from  api.openweathermap.org with city ID as chennai and KEY.\r JSON data is placed in the constants file.\r Parsing the data and updating it in the react highcharts is done from the constants JSON file.\r Plotted Wind,Pressure and temperature metrics against the time list retrieved from JSON data.",
   "main": "index.js",
   "scripts": {
-    "build": "webpack -p --define process.env.NODE_ENV='\"production\"' --progress --colors",
+    "serve": "node server.js",
+    "build": "webpack -p",
     "start": "webpack-dev-server"
   },
   "author": "",
@@ -28,7 +29,7 @@
     "sass-loader": "^6.0.5",
     "style-loader": "^0.17.0",
     "url-loader": "^0.5.8",
-    "webpack": "^2.5.1",
+    "webpack": "^2.6.1",
     "webpack-dev-server": "^2.4.5"
   },
   "repository": {
